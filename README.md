@@ -1,3 +1,6 @@
 # Ejercicio-de-clase-1
 
-Hello Wordl este es el ejercicio de la primera clase
+# Hello 
+**Wordl este** es el ejercicio de la primera clase
+
+## Nicolas Chuquista
