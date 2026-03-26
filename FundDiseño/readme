@@ -1,1 +1,15 @@
-Hola mundo voy a intentar 
+### 16. Sistemas existentes: benchmarking técnico
+
+A continuación se presenta un análisis comparativo de los sistemas más relevantes del mercado y de la literatura académica en relación con el sistema SolarGrid propuesto:
+
+| Sistema | Precio (USD) | MPPT | WiFi / App | Priorización cargas | Alertas SMS | Open source / contexto rural |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Victron SmartSolar MPPT 100/20** | $120 | Sí (Ultra-Fast) | Solo Bluetooth | No (1 salida load) | No | No / RV europeo-americano |
+| **Victron + VRM Portal** | $350+ | Sí | WiFi vía GX device ($200+) | No | No | No / Industrial |
+| **EPEver Tracer AN 30A + WiFi** | $73 | Sí (≥99.5%) | WiFi (Solar Guardian) | No (1 salida) | No | No / Off-grid general |
+| **Renogy ONE M1** | $260 + $30-60/año | No (solo monitoreo) | WiFi + app + nube | 3 cargas DC ON/OFF | No | No / RV norteamericano |
+| **Open Solar Project (OSPController)** | ~$80 DIY | Sí (P&O en ESP32) | Adafruit.io / ThingSpeak | No | No | Sí / Makers |
+| **Proyectos académicos ESP32 (IEEE, MDPI)** | $30-80 | Parcial o ninguno | ThingSpeak / Blynk | No | No | Parcial / Investigación |
+| **SolarGrid (propuesta)** | $110-150 + $3-5/mes opt. | Sí (P&O adaptativo) | WiFi + app + SMS | Sí (3 niveles automático) | Sí (SIM800L) | Sí / Comunidades rurales Perú |
+
+> **Fuentes:** Victron Energy (2024); EPEver (2024); Renogy (2022); Open Solar Project GitHub (2019); Lahabar et al. (2023); Nassar et al. (2024).
