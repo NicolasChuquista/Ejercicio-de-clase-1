@@ -1,1 +1,307 @@
-Hellooooooo Worddddl 
+# [cite_start]AquaBalde: Sistema Inteligente de Monitoreo de Calidad de Agua [cite: 1]
+
+[cite_start]**Proyectos I - Estado del Arte (2024)** [cite: 1]
+[cite_start]**Sistema Inteligente de Monitoreo de Calidad de Agua para Comunidades Rurales y Periurbanas** [cite: 1]
+
+---
+
+## [cite_start]1. Descripción del Problema [cite: 8]
+
+### [cite_start]1.1 Contexto y Situación Actual [cite: 8]
+[cite_start]En numerosas comunidades rurales y periurbanas de América Latina y otras regiones en desarrollo, el acceso a agua potable segura continúa siendo un desafío crítico. [cite: 9] [cite_start]Ante la ausencia de redes de distribución municipal confiables, miles de familias recurren a la recoleccion de agua proveniente de fuentes naturales (ríos, lagos, pozos y manantiales) que almacenan en baldes o recipientes domesticos sin ningun tipo de control de calidad. [cite: 10] [cite_start]Esta práctica, si bien es la única opción disponible para muchos hogares, conlleva riesgos sanitarios severos. [cite: 11] [cite_start]El agua almacenada en condiciones no controladas puede contener una amplia variedad de contaminantes biológicos, químicos y físicos que, al ser ingeridos, generan enfermedades de transmisión hídrica (ETH) como colera, fiebre tifoidea, hepatitis A, diarreas infecciosas y gastroenteritis. [cite: 12] [cite_start]Según la Organización Mundial de la Salud (OMS), aproximadamente 2.000 millones de personas en el mundo beben agua contaminada con heces, lo que provoca 485.000 muertes por diarrea al año. [cite: 13]
+
+> [cite_start]**Dato Clave (OMS 2023):** El 26% de la población mundial (2.000 millones de personas) carece de acceso a agua potable gestionada de forma segura. [cite: 14] [cite_start]En zonas rurales de países de ingresos bajos y medios, la cifra asciende al 46%. [cite: 15] [cite_start]Las enfermedades relacionadas con el agua insalubre son responsables de aproximadamente 1,4 millones de muertes infantiles por año. [cite: 16]
+
+### [cite_start]1.2 Problema Específico [cite: 17]
+[cite_start]El problema central que aborda AquaBalde es la imposibilidad de las comunidades rurales y periurbanas de conocer, en tiempo real y de forma simple, si el agua que almacenan en sus baldes domésticos es apta para el consumo humano. [cite: 17] Actualmente:
+* [cite_start]No existen herramientas accesibles y asequibles que permitan monitorear la calidad del agua a nivel del hogar. [cite: 18]
+* [cite_start]Los análisis de laboratorio son costosos, lentos y requieren infraestructura especializada. [cite: 19]
+* [cite_start]Las comunidades carecen de conocimiento técnico para identificar agua contaminada, ya que muchos contaminantes son incoloros, inodoros e insípidos. [cite: 20]
+* [cite_start]La contaminación del agua almacenada puede aumentar con el tiempo si el recipiente no es adecuado. [cite: 21]
+* [cite_start]No hay un mecanismo simple de alerta que indique cuándo el agua es insegura antes de ser consumida. [cite: 22]
+
+### [cite_start]1.3 Alcance del Problema [cite: 23]
+[cite_start]El problema tiene dimensiones múltiples que van más allá de la simple falta de infraestructura: [cite: 24]
+* [cite_start]**Dimensión Sanitaria**: Enfermedades gastrointestinales, intoxicaciones crónicas por metales pesados, mortalidad infantil. [cite: 24]
+* [cite_start]**Dimensión Económica**: Costos de atención médica, pérdida de días laborales, impacto en productividad. [cite: 25]
+* [cite_start]**Dimensión Social**: Desigualdad en el acceso a información, vulnerabilidad de poblaciones marginadas. [cite: 26]
+* [cite_start]**Dimensión Ambiental**: Fuentes de agua contaminadas por actividades mineras, agrícolas o industriales cercanas a comunidades. [cite: 27]
+
+---
+
+## [cite_start]2. Solución Propuesta - AquaBalde [cite: 28]
+
+### [cite_start]2.1 Descripción General [cite: 29]
+[cite_start]AquaBalde es un sistema integrado de monitoreo de calidad de agua diseñado para integrarse directamente en un balde de doble pared estándar. [cite: 29] [cite_start]El sistema combina sensores electroquímicos y ópticos con un microcontrolador de bajo consumo, una pantalla de visualización y un módulo de conectividad opcional, todo encapsulado entre las dos capas del balde para garantizar impermeabilidad, protección mecánica y una experiencia de usuario simple e intuitiva. [cite: 30] [cite_start]El usuario final no necesita conocimientos técnicos: introduce el agua en el balde, y en menos de 60 segundos el sistema presenta en una pantalla si el agua es APTA o NO APTA para consumo, junto con los valores medidos de cada parámetro. [cite: 31] [cite_start]La decisión se basa en una regla de clasificación fundamentada en los estándares de la OMS y normativas nacionales de calidad de agua potable. [cite: 32]
+
+### [cite_start]2.2 Parámetros Monitoreados [cite: 33]
+
+| Parámetro | Sensor Utilizado | Rango de Medición | Límite OMS | Indicio |
+| :--- | :--- | :--- | :--- | :--- |
+| **pH** | Electrodo ISFET/ vidrio | 0-14 pH | 6.5-8.5 | Acidez / Alcalinidad |
+| **Turbidez** | Sensor óptico 880nm (NTU) | 0-1000 NTU | < 5 NTU | Sólidos, coloides |
+| **Conductividad Eléctrica** | Electrodo de 2 puntas (EC) | 0-2000 µS/cm | < 400 µS/cm | Metales, sales disueltas |
+| **Coliformes Termotolerantes** | Biosensor enz. / electroquim. | Deteccion cualitativa | 0 UFC/100mL | Contaminación fecal |
+
+### [cite_start]2.3 Regla de Clasificación de Aptitud [cite: 35]
+[cite_start]El sistema implementa una lógica de decisión basada en umbrales definidos según los lineamientos de la OMS y normas como la NSF/ANSI 61 y la NTC-813 colombiana: [cite: 35]
+* [cite_start]**APTA si**: 6.5 ≤ pH ≤ 8.5 Y Turbidez < 5 NTU Y Conductividad < 400 µS/cm Y Coliformes = Negativo. [cite: 35]
+* [cite_start]**NO APTA si**: Cualquier parámetro supera su umbral crítico. [cite: 35] [cite_start]Se muestra alerta visual (LED rojo) y descripción del parámetro fuera de rango. [cite: 36]
+
+### [cite_start]2.4 Propuesta de Valor Diferenciadora [cite: 37]
+* [cite_start]**Balde comercializable**: El sistema forma parte del balde. [cite: 38] [cite_start]No es un dispositivo separado que el usuario debe operar. [cite: 39]
+* [cite_start]Sin suscripciones ni reactivos consumibles (excl. biosensor de coliformes que requiere recarga anual). [cite: 40]
+* [cite_start]Pantalla LED + código de colores: Verde = apta, Rojo = no apta, Amarillo = precaución. [cite: 41]
+* [cite_start]Bajo costo: Objetivo de precio de venta al público < USD 35. [cite: 42]
+* [cite_start]Durabilidad tropical: IP67, resistente a golpes, temperatura 0-50°C. [cite: 42]
+* [cite_start]Fuente de energía: Batería recargable por solar o micro-USB con autonomía > 1 año en uso normal. [cite: 43]
+
+---
+
+## [cite_start]3. Roadmap del Usuario (Customer Journey Map) [cite: 45]
+
+[cite_start]El customer journey map traza la experiencia completa del usuario desde el momento en que adquiere el AquaBalde hasta el uso cotidiano, identificando emociones, puntos de dolor y oportunidades de mejora en cada etapa. [cite: 45]
+
+| Etapa | Acciones del Usuario | Pensamientos | Emociones | Puntos de Dolor | Oportunidades |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **1. Conocimiento** | Ve el producto en tienda o por recomendación | ¿Realiza lo que promete? | Curiosidad / Escepticismo | Desconfianza en tecnología | Demos en punto de venta |
+| **2. Compra** | Adquiere el balde en tienda local o por programa social | ¿Vale la pena el precio? | Esperanza / Incertidumbre | Precio puede ser barrera | Subsidio o microcrédito |
+| **3. Activación** | Activa la batería, lee manual con pictogramas | Espero que sea fácil | Ansiedad leve | Manual complejo | Tutorial en video QR |
+| **4. Primer Uso** | Llena el balde, espera lectura (60 seg) | ¿Funciona bien? | Expectativa | Tiempo de espera | Animación de progreso |
+| **5. Interpretación** | Lee resultado: ΑΡΤΑ/ΝΟ ΑΡΤΑ + valores | Qué hago si dice NO APТА | Alivio o preocupación | No sabe qué hacer | Recomendaciones en pantalla |
+| **6. Uso Cotidiano** | Mide cada vez que llena el balde | Ya confío en esto | Confianza / Hábito | Mantenim. del sensor | Alerta de recalibración |
+| **7. Mantenimiento** | Recarga batería, reemplaza cartucho biosensor anual | No quiero que falle | Responsabilidad | Disponib. repuestos | Red de distribuidores locales |
+| **8. Recomendación** | Comenta con vecinos, familia | Esto debería tenerlo todo el mundo | Orgullo / Empoder. | Sin incentivo formal | Programa de referidos |
+
+### [cite_start]3.1 Momentos Críticos (Moments of Truth) [cite: 47]
+* [cite_start]**MOT 1 - Primer Resultado**: Si la primera medición muestra resultado correcto, la confianza se consolida. [cite: 48]
+* [cite_start]**MOT 2 - Primera Alerta NO APTA**: El usuario debe recibir orientación clara sobre cómo proceder (hervir, filtrar, buscar otra fuente). [cite: 49]
+* [cite_start]**MOT 3 - Falla del dispositivo**: Protocolo de garantia y reemplazo rápido es fundamental para retención. [cite: 50]
+
+---
+
+## [cite_start]4. Mapa de Empatía [cite: 51]
+[cite_start]**Perfil del Usuario Primario:** Jefa/Jefe de hogar rural o periurbano [cite: 51]
+
+* [cite_start]**QUE VE**: Vecinos enfermos frecuentemente. [cite: 52] Rios y lagos cercanos con basura y actividad minera. [cite_start]Ausencia de agua de grifo o con suministro intermitente. [cite: 53] Noticias sobre intoxicaciones en comunidades cercanas. [cite_start]Sus hijos jugando cerca de fuentes de agua potencialmente contaminada. [cite: 54]
+* [cite_start]**QUE DICE Y HACE**: Hierve el agua cuando puede costear el gas. [cite: 55] Recoge agua del lago o acequia temprano en la manana. [cite_start]Usa el mismo balde de plastico sin tapa. [cite: 56] Dice: 'siempre hemos bebido de este rio, nunca ha pasado nada'. [cite_start]Le da agua directamente a los ninos sin tratamiento. [cite: 57]
+* **DOLORES**: Incertidumbre sobre si el agua que consume es segura. [cite_start]Gastos medicos por enfermedades evitables. [cite: 58] Tiempo invertido en tratar el agua (hervir). [cite_start]Falta de informacion confiable en su idioma. [cite: 59] [cite_start]Riesgo de intoxicacion cronica por metales (sin sintomas evidentes). [cite: 60]
+* [cite_start]**QUE ESCUCHA**: Autoridades dicen que el agua es segura pero la gente se enferma. [cite: 60] Vecinos comentan que el agua sabe rara a veces. [cite_start]Programa de salud habla de hervir el agua. [cite: 61] [cite_start]Familiares en la ciudad tienen agua segura del grifo y preguntan por que no aca. [cite: 62]
+* **QUE PIENSA Y SIENTE**: Miedo a enfermar a su familia. [cite_start]Frustracion por no poder garantizar agua segura. [cite: 63] Resignacion ante la falta de opciones. [cite_start]Desconfianza de tecnologias que no entiende. [cite: 64] Orgullo cuando puede proveer lo mejor para su familia. [cite_start]Ansiedad cuando sus hijos presentan diarrea. [cite: 65]
+* **GANANCIAS**: Saber con certeza si el agua es segura para su familia. [cite_start]Reducir enfermedades y gastos medicos. [cite: 66] Sentirse empoderado con informacion confiable. [cite_start]Solucion simple que no requiere conocimientos tecnicos. [cite: 67] [cite_start]Proteger la salud de sus hijos de forma activa. [cite: 68]
+
+---
+
+## [cite_start]5. Funcionamiento Técnico del Sistema [cite: 69]
+
+### [cite_start]5.1 Arquitectura de Hardware [cite: 69]
+[cite_start]El sistema AquaBalde se compone de cinco subsistemas principales integrados en la doble pared del balde: [cite: 69]
+
+| Subsistema | Componentes Principales | Función |
+| :--- | :--- | :--- |
+| **Sensado** | Electrodo pH ISFET, Sensor turbidez OPT101, Electrodo EC 2 puntas, Biosensor coliformes (enz.) | Medición de parámetros fisicoquimicos y biológicos |
+| **Procesamiento** | Microcontrolador ESP32-S3 (Xtensa LX7 240MHz), ADC 12-bit integrado | Adquisicion, procesamiento y clasificación de datos |
+| **Interfaz de Usuario** | Pantalla OLED 1.3" SH1106, LEDs RGB, Buzzer piezoelectrico | Visualización de resultados y alertas |
+| **Energia** | Batería LiPo 3000mAh, Panel solar 5V/1W (opcional), Cargador TP4056 | Alimentación autónoma del sistema |
+| **Conectividad** | WiFi 2.4GHz/ BLE 5.0 (ESP32 nativo), UART para depuración | Transmisión de datos a app móvil (opcional) |
+
+### [cite_start]5.2 Funcionamiento Electrónico [cite: 70]
+* [cite_start]**5.2.1 Medición de pH**: El sensor de pH basado en tecnología ISFET (lon-Sensitive Field-Effect Transistor) o electrodo de vidrio de referencia Ag/AgCl genera una diferencia de potencial proporcional a la concentración de iones H+ en solución. [cite: 71] [cite_start]La señal de salida es una tensión analógica en el rango de 0-3.3V que el ADC del ESP32 convierte a valor digital. [cite: 72] [cite_start]La calibración se realiza con dos soluciones buffer (pH 4.0 y pH 7.0), con coeficiente de temperatura compensado automáticamente mediante un sensor NTC embebido. [cite: 73] [cite_start]Resolución objetivo: ± 0.1 pH. [cite: 74]
+* [cite_start]**5.2.2 Medición de Turbidez**: El sensor de turbidez opera bajo el principio nefelométrico: un LED infrarrojo de 880nm ilumina la muestra y un fotodetector mide la intensidad de la luz dispersada a 90 grados respecto al haz incidente. [cite: 74] Mayor dispersión = mayor turbidez (NTU). [cite_start]El circuito de acondicionamiento incluye un amplificador operacional de instrumentación INA128 y un filtro paso-bajo de 2do orden para eliminar interferencias de 50/60Hz. [cite: 75] [cite_start]El rango de medición es 0-3000 NTU con resolución de 0.1 NTU en el rango crítico de 0-10 NTU. [cite: 76]
+* [cite_start]**5.2.3 Medición de Conductividad Eléctrica**: La conductividad eléctrica se mide mediante un electrodo de dos puntas de acero inoxidable 316L sumergido en el agua. [cite: 78] [cite_start]Se aplica una señal AC de baja frecuencia (1-10 kHz) para evitar polarización de electrodos, y se mide la corriente resultante para calcular la resistencia de la solución. [cite: 79] [cite_start]El microcontrolador genera la señal AC mediante PWM y un filtro RC, y calcula la conductividad según la constante de celda k=d/A (distancia/area de electrodos). [cite: 80] El resultado se normaliza a 25°C mediante compensación de temperatura. [cite_start]Unidad de salida: µS/cm. [cite: 81] [cite_start]Rango: 10-5000 µS/cm. [cite: 82]
+* [cite_start]**5.2.4 Detección de Coliformes Termotolerantes**: La detección de coliformes utiliza un biosensor electroquimico basado en la actividad de la enzima beta-D-galactosidasa, específica de coliformes termotolerantes (incluyendo E. coli). [cite: 82] [cite_start]El cartucho descartable contiene un sustrato cromogénico/electrogeno (ONPG 0 4-NP-beta-D-galactopiranosiósido) que al ser hidrolizado por la enzima produce un cambio de color o una corriente electroquimica detectable. [cite: 83] [cite_start]El resultado es cualitativo (positivo/negativo) y la medición requiere una incubación de 30-45 minutos a temperatura ambiente. [cite: 84] [cite_start]El cartucho tiene una vida útil de 12 meses y requiere reemplazo anual. [cite: 85]
+
+### [cite_start]5.3 Diagrama de Flujo del Firmware [cite: 86]
+1. [cite_start]**Inicio**: Verificación de integridad de sensores (auto-test POST). [cite: 86]
+2. [cite_start]**Modo Reposo**: Sistema en deep-sleep, consumo < 50 µA. [cite: 87]
+3. [cite_start]**Activación**: Botón fisico o detección de nivel de agua por sensor capacitivo. [cite: 87]
+4. [cite_start]**Adquisición**: Lectura de 10 muestras por parámetro con promediado (descarta min/max). [cite: 88]
+5. [cite_start]**Procesamiento**: Aplicación de regla de clasificación con umbrales OMS. [cite: 88]
+6. **Visualización**: Resultado en pantalla OLED + LED RGB. [cite_start]SI NO APTA, mensaje específico del parámetro fuera de rango. [cite: 89]
+7. [cite_start]**Almacenamiento**: Log de medición en FLASH interna (hasta 10.000 registros) con timestamp RTC. [cite: 90]
+8. [cite_start]**Transmisión (opcional)**: Envío de datos vía BLE a app móvil o WiFi a servidor MQTT. [cite: 91]
+
+### [cite_start]5.4 Funcionamiento Mecánico [cite: 92]
+[cite_start]El balde AquaBalde tiene una estructura de doble pared fabricada en HDPE (polietileno de alta densidad) virgen, grado alimentario, libre de BPA. [cite: 92] [cite_start]Los componentes electrónicos se alojan entre las dos capas, con las siguientes consideraciones mecánicas: [cite: 93]
+* [cite_start]**Carcasa electrónica**: Encapsulado con resina epoxi bicomponente y sellado con junta de silicona IP67. [cite: 93]
+* [cite_start]**Sonda de sensores**: Protrusión controlada hacia el interior del balde de 15mm para asegurar contacto permanente con el agua. [cite: 94]
+* [cite_start]**Pantalla**: Protegida por ventana de policarbonato antirayadura y antivaho, sellada con gasket de EPDM. [cite: 95]
+* [cite_start]**Botón de activacion**: Membrana de silicona sellada al tacto, resistente a agua y polvo (IP67). [cite: 97]
+* [cite_start]**Tapa**: Sistema de cierre hermetical con junta perimetral para evitar contaminación cruzada. [cite: 98]
+* [cite_start]**Capacidad**: 10 litros (estándar) o 20 litros (variante XL). [cite: 99]
+* [cite_start]**Peso total con electronicos**: 850g (10L) / 1.1 kg (20L). [cite: 99]
+
+### [cite_start]5.5 Funcionamiento de Software [cite: 100]
+[cite_start]La pila de software de AquaBalde se estructura en tres capas: [cite: 100]
+
+| Capa | Tecnología | Descripción |
+| :--- | :--- | :--- |
+| **Firmware Embebido** | FreeRTOS + ESP-IDF (C/C++) | Control de sensores, lógica de clasificación, gestión de energía, protocolo BLE/WiFi |
+| **App Móvil (Opcional)** | Flutter (Android / iOS) | Visualización de historial, alertas push, mapa de puntos de agua en la comunidad |
+| **Backend Cloud (Opcional)** | AWS IoT Core + DynamoDB + Lambda | Agregación de datos comunitarios, reportes para autoridades sanitarias, alertas tempranas |
+
+---
+
+## [cite_start]6. Benchmark - Comparativa con Proyectos y Empresas Existentes [cite: 103]
+[cite_start]Se realizó un análisis comparativo de soluciones existentes en el mercado y proyectos académicos con objetivos similares, para posicionar AquaBalde e identificar su ventaja diferencial. [cite: 103]
+
+### [cite_start]6.1 Comparativa de Soluciones Comerciales [cite: 104]
+
+| Solución | Empresa/Origen | pH | Turbidez | Colif. | EC | Precio (USD) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **AquaBalde** | Proyecto Propio | ✓ | ✓ | ✓ | ✓ | ~35 |
+| **Libelium Smart Water** | Libelium (ESP) | ✓ | ✓ | ✓ | ✓ | > 3,000 |
+| **Hach Portable Meters** | Hach (USA) | X | ✓ | X | ✓ | 800-2,500 |
+| **Piramal Sarvajal** | Piramal (IND) | X | Parcial | X | X | N/A (B2G) |
+| **mWater App** | mWater (USA) | X | X | Manual | X | Gratis (app) |
+| **UNICEF WASH Kit** | UNICEF | Test papel | Visual | X | X | 12-25 (kit) |
+| **Safe Water Network** | NGO (USA/Ghana) | X | X | X | X | Infraestr. |
+| **Tata Swach Sensor** | Tata (IND) | X | ✓ | X | X | 18-22 |
+| **DrinkSafe Tech.** | DrinkSafe (USA) | X | X | ✓ | X | 8-15 (tiras) |
+
+### [cite_start]6.2 Ventajas Diferenciales de AquaBalde [cite: 105]
+* [cite_start]Es el único sistema que integra los 4 parámetros críticos en un solo dispositivo a precio accesible. [cite: 106]
+* [cite_start]Es el único que viene integrado en el recipiente de almacenamiento (no es un dispositivo externo). [cite: 107]
+* [cite_start]No requiere conocimientos técnicos: resultado binario con código de colores. [cite: 108]
+* [cite_start]Precio objetivo de USD 35, al menos 20x más barato que equipos profesionales comparables. [cite: 109]
+* [cite_start]Diseñado específicamente para el contexto rural latinoamericano y de países en desarrollo. [cite: 110]
+
+### [cite_start]6.3 Proyectos Académicos Relacionados [cite: 112]
+
+| Proyecto / Autor | Institución | Parámetros | Diferencia con AquaBalde |
+| :--- | :--- | :--- | :--- |
+| **IoT Water Quality Monitoring** (Kumar et al., 2023) | IIT Delhi | pH, Turbidez, DO, Temp. | No incluye coliformes; no integrado en recipiente |
+| **Low-cost Water Sensor** (Lopez-Morales, 2022) | UNAM Mexico | pH, EC, Turbidez | Sin biosensor; uso en rio, no en hogar |
+| **WASH Sensor v2** (Stott & Graham, 2021) | MIT D-Lab | Turbidez, cloro | Solo 2 parametros; no autonomo |
+| **AquaWatch** (Zhao et al., 2022) | Univ. Queensland | pH, Turbidez, Metales | Requiere laboratorio para metales; costoso |
+
+---
+
+## [cite_start]7. Análisis de Patentes [cite: 114]
+
+### [cite_start]7.1 Patentes Relevantes Identificadas [cite: 115]
+[cite_start]Se realizó una búsqueda en bases de datos USPTO, EPO (Espacenet) y Google Patents con términos como 'water quality monitoring bucket', 'portable water sensor IoT', 'drinking water quality device low-cost', 'turbidity pH sensor portable'. [cite: 115] [cite_start]Los resultados más relevantes son: [cite: 116]
+
+| Número de Patente | Titular | Año | Título / Tema | Relación con AquaBalde |
+| :--- | :--- | :--- | :--- | :--- |
+| **US10527571B2** | Hach Company | 2020 | Portable multi-param water analyzer | Mismo principio; mayor costo/complejidad. No integrado en recipiente. |
+| **EP3106850A1** | Libelium | 2016 | IoT sensor node for water quality | Nodo externo; no portable/domiciliario. |
+| **CN107621469A** | Univ. Tsinghua | 2018 | Low-cost water quality sensor for rural areas | Enfocado en turbidez y pH; sin coliformes. |
+| **WO2019178488A1** | WaterScope Ltd. | 2019 | Rapid coliform detection portable device | Detección de coliformes; no incluye otros param. |
+| **US20210116428A1** | Ecolab | 2021 | Container-integrated water monitoring system | Concepto similar al balde integrado; industrial, no domiciliario. |
+
+### [cite_start]7.2 Espacio de Protección Intelectual de AquaBalde [cite: 117]
+[cite_start]Basado en el análisis de patentes, AquaBalde tiene potencial de protección en las siguientes características novedosas: [cite: 118]
+* [cite_start]Integración de sistema multiparamétrico en la doble pared de un recipiente domiciliario de almacenamiento de agua. [cite: 118]
+* [cite_start]Algoritmo de clasificación simplificado (APTA/NO APTA) con visualización semáfrica integrada al recipiente. [cite: 119]
+* [cite_start]Biosensor de coliformes termotolerantes de cartucho reemplazable integrado en pared de recipiente. [cite: 120]
+* [cite_start]Diseño mecánico de doble pared con sellado IP67 y sonda retractil de sensores. [cite: 121]
+* [cite_start]Se recomienda presentar una solicitud de patente de invención ante la Superintendencia de Industria y Comercio (SIC) en Colombia o la autoridad competente del país, explorando el trámite PCT para cobertura internacional. [cite: 122]
+
+---
+
+## [cite_start]8. Alineamiento con los ODS - Objetivos de Desarrollo Sostenible [cite: 125]
+[cite_start]AquaBalde tiene un alineamiento directo y transversal con los Objetivos de Desarrollo Sostenible de la Agenda 2030 de Naciones Unidas: [cite: 125]
+
+| ODS | Número | Meta Específica | Contribución de AquaBalde |
+| :--- | :--- | :--- | :--- |
+| **Agua Limpia** | ODS 6 | Meta 6.1: Acceso universal a agua potable segura asequible para todos | Permite verificar aptitud del agua almacenada en comunidades sin infraestructura hidrica. |
+| **Salud** | ODS 3 | Meta 3.2 y 3.3: Reducir mortalidad infantil y enfermedades transmisibles | Reduce riesgo de ETH al alertar sobre agua contaminada antes del consumo. |
+| **Industria** | ODS 9 | Meta 9.4: Modernizar infraestructuras con tecnologia sostenible | Aplica loT y sensores de bajo costo para modernizar la gestion del agua domestica. |
+| **Reducc. Desig.** | ODS 10 | Meta 10.2: Empoderamiento de comunidades vulnerables | Democratiza el acceso a informacion de calidad de agua para comunidades rurales. |
+| **Alianzas** | ODS 17 | Meta 17.7: Transferencia de tecnologia a países en desarrollo | Modelo de negocio B2G y B2B para distribución en programas de cooperación. |
+| **Vida Acuat.** | ODS 14 | Meta 14.1: Reducir contaminación marina y de aguas continentales | Genera datos de contaminación de fuentes de agua que pueden alimentar politicas ambientales. |
+
+### [cite_start]8.1 ODS Principal: ODS 6 - Agua Limpia y Saneamiento [cite: 127]
+[cite_start]EI ODS 6 es el corazón de la propuesta de valor de AquaBalde. [cite: 127] [cite_start]La Meta 6.1 busca lograr el acceso universal y equitativo al agua potable a un precio asequible para todos hacia 2030. [cite: 128] [cite_start]AquaBalde contribuye directamente al indicador 6.1.1 (proporción de la población que usa servicios de agua potable gestionados de forma segura) al proporcionar una herramienta de verificación en el punto de uso que suple la ausencia de laboratorios y sistemas de control de calidad institucional. [cite: 128]
+
+---
+
+## [cite_start]9. Análisis de Precio y Modelo de Negocio [cite: 129]
+
+### [cite_start]9.1 Estructura de Costos Estimados (Producción en Serie 1000 unidades) [cite: 130]
+
+| Componente | Costo Unit. (USD) | Cantidad | Total Unit. (USD) |
+| :--- | :--- | :--- | :--- |
+| Microcontrolador ESP32-S3 WROOM | 2.80 | 1 | 2.80 |
+| Sensor pH (ISFET + circuito) | 4.50 | 1 | 4.50 |
+| Sensor Turbidez OPT101 + LED IR | 1.80 | 1 | 1.80 |
+| Electrodo Conductividad (Acero 316L) | 0.90 | 1 | 0.90 |
+| Biosensor Coliformes (cartucho) | 2.20 | 1 | 2.20 |
+| Pantalla OLED 1.3" | 1.40 | 1 | 1.40 |
+| Batería LiPo 3000mAh | 3.20 | 1 | 3.20 |
+| PCB + componentes pasivos | 1.50 | 1 | 1.50 |
+| Balde HDPE doble pared + inyección | 3.80 | 1 | 3.80 |
+| Empaque, accesorios, manual | 0.60 | 1 | 0.60 |
+| Ensamble + mano de obra | 1.80 | 1 | 1.80 |
+| **COSTO TOTAL DE PRODUCCIÓN** | | | **USD 24.50** |
+
+### [cite_start]9.2 Estrategia de Precios [cite: 132]
+
+| Segmento | Precio Venta (USD) | Margen Bruto | Canal |
+| :--- | :--- | :--- | :--- |
+| **B2C** - Usuario final tienda | 34.90 | ~30% | Ferreteria, supermercado, e-commerce |
+| **B2G** - Gobiernos / Alcaldias | 28.00 | ~14% | Licitaciones WASH, programas sociales |
+| **B2B** - ONGs / Cooperacion | 26.00 | ~6% | UNICEF, Cruz Roja, Ayuda en Accion |
+| **Cartucho reposicion (anual)** | 6.90 | ~50% | Farmacia, distribuidor, app |
+
+[cite_start]El modelo Razor & Blade (balde + cartucho anual) garantiza ingresos recurrentes y fidelización del cliente. [cite: 134] [cite_start]El precio objetivo de USD 35 representa menos de 10 días de tratamiento con agua embotellada para una familia promedio, posicionándolo como una inversión con retorno evidente en salud y economía familiar. [cite: 135]
+
+---
+
+## [cite_start]10. Ficha Técnica del Producto [cite: 138]
+
+| Parámetro Técnico | Especificación |
+| :--- | :--- |
+| **Nombre Comercial** | AquaBalde Sistema de Monitoreo de Calidad de Agua |
+| **Modelo** | AB10L -v1.0 (10 litros) / AB-20L v1.0 (20 litros) |
+| **Microcontrolador** | ESP32-S3 WROOM-1U, Xtensa LX7 Dual Core 240MHz, 512KB SRAM, 8MB Flash |
+| **Rango de pH** | 0.0-14.0 pH \| Resolución: ±0.1 \| Exactitud: ±0.2 |
+| **Rango Turbidez** | 0-3000 NTU \| Resolución: 0.1 NTU \| Exactitud: ±2 NTU |
+| **Rango Conductividad** | 10-5000 µS/cm \| Resolución: 1 µS/cm \| Exactitud: ±3% |
+| **Detección Coliformes** | Cualitativa (Positivo/Negativo) \| Tiempo: 30-45 min \| LD: 1 UFC/100mL |
+| **Pantalla** | OLED 1.3" 128x64 px, 200cd/m2 de brillo, visible bajo luz solar |
+| **Indicadores** | LED RGB tricolor (Rojo/Amarillo/Verde) + Buzzer 85dB |
+| **Batería** | LiPo 3.7V 3000mAh \| Vida: >12 meses uso normal (1 medición/día) |
+| **Carga** | Micro-USB 5V/1A \| Panel solar 5V/1W (accesorio) |
+| **Conectividad** | WiFi 802.11b/g/n 2.4GHz \| Bluetooth BLE 5.0 |
+| **Proteccion** | IP67 (sumergible hasta 1m, 30 minutos) |
+| **Temperatura de Operación**| 0°C - 50°C \| Humedad relativa: 10%-95% (sin condensación) |
+| **Material Balde** | HDPE virgen grado alimentario, libre de BPA, reciclable |
+| **Dimensiones (10L)** | 305 x 230 x 265 mm (Diámetro x Diámetro base x Alto) |
+| **Peso Total (10L)** | 850 g (con electrónicos y batería) |
+| **Vida Útil del Sistema** | > 5 años (con mantenimiento preventivo anual) |
+| **Vida Útil Cartucho Biosensor**| 12 meses desde apertura \| 24 meses sellado |
+| **Calibración** | Automática con compensación de temperatura \| Manual con kit buffer c/6 meses |
+| **Normas de Referencia** | OMS Guidelines for Drinking-water Quality (4th Ed.) \| NSF/ANSI 61 \| NTC-813 |
+| **Certificaciones Objetivo** | CE, FCC, INVIMA (Colombia), ANATEL (Brasil), NOM (México) |
+| **Garantía** | 2 años en electrónica \| 1 año en estructura mecánica |
+
+---
+
+## [cite_start]11. Referencias Bibliográficas [cite: 140]
+
+1. World Health Organization. (2023). Progress on household drinking water, sanitation and hygiene 2000-2022. [cite_start]WHO/UNICEF JMP. [cite: 141]
+2. Bhardwaj, N., & Kumar, B. (2023). IoT-based real-time water quality monitoring system: A review. [cite_start]Sensors and Actuators B: Chemical, 320, 128398. [cite: 142]
+3. Libelium Smart Water. (2022). Datasheet: Smart Water IoT Sensor Platform. [cite_start]Libelium Comunicaciones Distribuidas S.L. [cite: 143]
+4. Bhattacharya, P., et al. (2022). [cite_start]Low-cost water quality sensors for point-of-use testing in low-income settings: A systematic review. npj Clean Water, 5(1), 1-14. [cite: 144]
+5. OMS. (2017). Guias para la calidad del agua de consumo humano. Cuarta edicion que incorpora la primera adenda. [cite_start]Ginebra: OMS. [cite: 145]
+6. Naciones Unidas. (2015). Agenda 2030 para el Desarrollo Sostenible. [cite_start]Resolución A/RES/70/1. [cite: 146]
+7. Kumar, A., et al. (2023). Design and implementation of loT-based water quality monitoring system for rural areas. [cite_start]IEEE Transactions on Instrumentation and Measurement, 72, 1-12. [cite: 147]
+8. Lopez-Morales, C. A. (2022). Desarrollo de sensor de bajo costo para monitoreo de calidad de agua en comunidades rurales de Mexico. [cite_start]Tesis de Maestria, UNAM. [cite: 149]
+9. Zhao, X., et al. (2022). AquaWatch: A portable multi-parameter water quality sensor for field deployment. [cite_start]Water Research, 210, 117928. [cite: 150]
+10. Espacio net Patent Database. (2024). Busqueda de patentes: 'portable water quality sensor', 'container-integrated water monitoring'. [cite_start]EPΟ. [cite: 151]
+11. Instituto Colombiano de Normas Técnicas. (2018). NTC-813: Calidad del agua. Agua potable. [cite_start]Bogota: ICONTEC. [cite: 152]
+12. UNICEF & WHO. (2023). State of the world's drinking water: An urgent call to action to accelerate progress on ensuring safe drinking water for all. [cite_start]Geneva: WHO. [cite: 153]
+
+---
+
+## [cite_start]12. Resumen Ejecutivo [cite: 154]
+
+[cite_start]**AquaBalde en una sola página** [cite: 154]
+
+* [cite_start]**PROBLEMA**: ~2.000 millones de personas no tienen acceso a agua potable segura. [cite: 155] [cite_start]En comunidades rurales, las familias almacenan agua de fuentes naturales en baldes sin ningun control de calidad, exponiendose a enfermedades de transmision hidrica (ETH) que causan 485.000 muertes/ano. [cite: 156]
+* [cite_start]**SOLUCION**: AquaBalde es un balde de doble pared de 10/20 litros con sistema electronico integrado que mide pH, turbidez, conductividad electrica y coliformes termotolerantes en menos de 60 segundos, indicando mediante pantalla OLED y LEDs si el agua es APTA o NO APTA para consumo. [cite: 157]
+* [cite_start]**DIFERENCIADOR CLAVE**: Es el unico sistema que integra 4 parametros criticos en el propio recipiente de almacenamiento, a un precio accesible de USD 34.90, sin requerir conocimientos tecnicos del usuario. [cite: 158]
+* [cite_start]**IMPACTO ODS**: Contribuye directamente a ODS 6 (Agua Limpia), ODS 3 (Salud), ODS 10 (Reduccion de desigualdades) y ODS 9 (Innovacion). [cite: 159]
+* [cite_start]**MODELO DE NEGOCIO**: B2C+B2G+B2B con modelo Razor & Blade (balde + cartucho anual USD 6.90). [cite: 160] [cite_start]Mercado potencial: >500 millones de hogares en paises en desarrollo. [cite: 161]
