@@ -1,37 +1,36 @@
 # AquaBalde 🪣💧
-> [cite_start]Sistema Inteligente de Monitoreo de Calidad de Agua para Comunidades Rurales y Periurbanas[cite: 3].
+> Sistema Inteligente de Monitoreo de Calidad de Agua para Comunidades Rurales y Periurbanas.
 
 ## ⚠️ El Problema
-[cite_start]En numerosas comunidades rurales y periurbanas, miles de familias recurren a la recolección de agua proveniente de fuentes naturales (ríos, lagos, pozos y manantiales) y la almacenan en recipientes domésticos sin ningún tipo de control de calidad[cite: 18, 19]. [cite_start]La imposibilidad de conocer en tiempo real si esta agua es segura expone a la población a severos riesgos sanitarios y enfermedades de transmisión hídrica (ETH)[cite: 20, 21, 29]. 
+En diversas zonas alejadas y periurbanas, muchas familias se ven obligadas a recolectar agua de la naturaleza (ríos, lagos, manantiales) y guardarla en recipientes comunes sin poder verificar su estado. No saber si este recurso es seguro expone a las personas a graves peligros sanitarios y enfermedades gástricas o infecciosas. 
 
-Esta realidad refleja una brecha crítica en el cumplimiento de los lineamientos de la OMS y los estándares nacionales, como el **DS N° 031-2010-SA (Reglamento de la Calidad del Agua para Consumo Humano)** en Perú.
+Esta situación evidencia una falta de cumplimiento de las recomendaciones de la OMS y de las normas nacionales vigentes, como el DS N° 031-2010-SA (Reglamento de la Calidad del Agua para Consumo Humano) en el territorio peruano.
 
 ## 💡 La Solución
-[cite_start]**AquaBalde** es un sistema integrado de monitoreo de calidad de agua diseñado para funcionar directamente en un balde de doble pared estándar fabricado en HDPE virgen, grado alimentario[cite: 48, 144]. [cite_start]El dispositivo combina hardware de bajo consumo con sensores electroquímicos y ópticos para evaluar el agua almacenada[cite: 49].
+AquaBalde es un recipiente inteligente creado para evaluar el agua almacenada. Funciona sobre un balde de doble pared hecho de polietileno de alta densidad (HDPE) apto para alimentos. El equipo integra sensores ópticos y electroquímicos de muy bajo consumo.
 
-[cite_start]El usuario final no requiere conocimientos técnicos: tras llenar el recipiente, el sistema evalúa la muestra y en menos de 60 segundos indica si el agua es **APTA** o **NO APTA** para consumo humano[cite: 50].
+No es necesario ser un experto para usarlo: una vez que se llena el balde, el dispositivo analiza el líquido y en menos de un minuto indica de forma clara si es APTA o NO APTA para el consumo.
 
 ### ⚙️ Características Principales
-* [cite_start]**Interfaz Intuitiva:** Resultados mostrados mediante una pantalla OLED 1.3" y un código de colores semafórico (LEDs RGB)[cite: 64, 112].
-* [cite_start]**Prevención de Contaminación Cruzada:** Diseño con cierre hermético y componentes encapsulados (IP67) entre las capas del balde[cite: 49, 146, 152].
-* [cite_start]**Bajo Costo y Autonomía:** Funciona con una batería LiPo de 3000mAh (recargable vía solar o micro-USB), eliminando suscripciones y utilizando únicamente un biosensor de recarga anual[cite: 63, 67, 112].
+* **Interfaz Intuitiva:** La información se muestra en una pantalla OLED de 1.3" y se apoya en un semáforo de luces LED RGB.
+* **Diseño Seguro:** Cuenta con cierre hermético y sus componentes electrónicos están protegidos contra el agua (certificación IP67) entre las paredes del recipiente para evitar contaminación cruzada.
+* **Autonomía y Economía:** Opera con una batería recargable de 3000mAh (por puerto micro-USB o panel solar) y no requiere pagos mensuales; solo se cambia el cartucho del biosensor una vez al año.
 
-## 📊 Parámetros Monitoreados
-[cite_start]El sistema implementa una lógica de decisión basada en umbrales normativos[cite: 55]. [cite_start]El agua se clasifica como APTA solo si todos los parámetros están dentro del rango seguro[cite: 57]:
+## 📊 Parámetros Evaluados
+El dispositivo utiliza una lógica basada en los límites de salud pública. El resultado solo será "APTA" si todos los valores están dentro de lo permitido:
 
-* [cite_start]**pH:** Medido vía electrodo ISFET/vidrio (Rango seguro: 6.5 - 8.5)[cite: 53, 115].
-* [cite_start]**Turbidez:** Medido con sensor óptico infrarrojo de 880nm (Límite: < 5 NTU)[cite: 53, 120].
-* [cite_start]**Conductividad Eléctrica:** Medido mediante electrodo de acero 316L de 2 puntas (Límite: < 400 µS/cm)[cite: 53, 126].
-* [cite_start]**Coliformes Termotolerantes:** Detección cualitativa mediante biosensor enzimático (Límite: 0 UFC/100mL)[cite: 53, 131].
+* **Acidez (pH):** Evaluado con electrodo ISFET/vidrio (Rango ideal: 6.5 - 8.5).
+* **Turbidez:** Analizado mediante sensor infrarrojo a 880nm (Límite: < 5 NTU).
+* **Conductividad Eléctrica:** Medida con puntas de acero inoxidable 316L (Límite: < 400 µS/cm).
+* **Bacterias (Coliformes):** Detección cualitativa usando un biosensor enzimático (Límite: 0 UFC/100mL).
 
 ## 🌍 Impacto y ODS (Objetivos de Desarrollo Sostenible)
-[cite_start]AquaBalde tiene un alineamiento directo con la Agenda 2030 de Naciones Unidas[cite: 198]:
-* [cite_start]**ODS 6 (Agua Limpia y Saneamiento):** Contribuye a la Meta 6.1 al democratizar la verificación de la aptitud del agua en comunidades sin infraestructura hídrica[cite: 199].
-* [cite_start]**ODS 3 (Salud y Bienestar):** Actúa como herramienta preventiva para reducir la mortalidad infantil y las enfermedades transmisibles al alertar sobre agua contaminada antes de su consumo[cite: 199].
-  
+El proyecto se alinea con las metas globales de la Agenda 2030:
+* **ODS 6 (Agua Limpia y Saneamiento):** Ayuda a democratizar la verificación del agua en poblaciones que no cuentan con redes de tuberías seguras.
+* **ODS 3 (Salud y Bienestar):** Funciona como un escudo preventivo para disminuir la mortalidad por enfermedades que se transmiten por agua contaminada.
 
 ## 🛠️ Stack Tecnológico (Hardware & Firmware)
-* [cite_start]**Microcontrolador:** ESP32-S3 WROOM (Xtensa LX7 Dual Core 240MHz)[cite: 112, 217].
-* [cite_start]**Firmware:** Desarrollo en C/C++ utilizando FreeRTOS + ESP-IDF[cite: 157].
-* [cite_start]**Conectividad:** WiFi 2.4GHz y Bluetooth LE 5.0 integrados para transmisión opcional de datos[cite: 112].
-* [cite_start]**ADC:** Conversor Analógico-Digital de 12-bit integrado para adquisición de datos de sensores[cite: 112].
+* **Procesador Central:** Microcontrolador ESP32-S3 WROOM (Xtensa LX7 Dual Core 240MHz).
+* **Desarrollo de Software:** Programado en C/C++ usando FreeRTOS y ESP-IDF.
+* **Comunicaciones:** Módulos WiFi 2.4GHz y Bluetooth LE 5.0 para enviar datos si se requiere.
+* **Conversión de Datos:** ADC de 12-bit incorporado para leer los valores de los sensores.
