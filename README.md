@@ -28,6 +28,7 @@ Esta realidad refleja una brecha crítica en el cumplimiento de los lineamientos
 [cite_start]AquaBalde tiene un alineamiento directo con la Agenda 2030 de Naciones Unidas[cite: 198]:
 * [cite_start]**ODS 6 (Agua Limpia y Saneamiento):** Contribuye a la Meta 6.1 al democratizar la verificación de la aptitud del agua en comunidades sin infraestructura hídrica[cite: 199].
 * [cite_start]**ODS 3 (Salud y Bienestar):** Actúa como herramienta preventiva para reducir la mortalidad infantil y las enfermedades transmisibles al alertar sobre agua contaminada antes de su consumo[cite: 199].
+  
 
 ## 🛠️ Stack Tecnológico (Hardware & Firmware)
 * [cite_start]**Microcontrolador:** ESP32-S3 WROOM (Xtensa LX7 Dual Core 240MHz)[cite: 112, 217].
